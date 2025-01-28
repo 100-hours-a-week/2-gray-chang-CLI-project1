@@ -19,7 +19,7 @@ public class Controller {
         }
     }
 
-    private double calculate() {
+    private double makeAnswer() {
         InputView inputView = new InputView();
         Order order = inputView.getCalcInput();
         Calculator calculator = makeCalculator(order);
@@ -27,8 +27,8 @@ public class Controller {
         return methodCalcMap.getMethodCalc(order.getMethodName()).get();
     }
 
-    public void output() {
-        double answer = calculate();
+    public void calculate() {
+        double answer = makeAnswer();
         OutputView outputView = new OutputView();
         outputView.output(answer);
     }
