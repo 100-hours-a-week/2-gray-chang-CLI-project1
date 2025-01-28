@@ -5,6 +5,7 @@ import calculatorEnum.MethodName;
 import calculatorService.*;
 import orderObject.Order;
 import view.InputView;
+import view.OutputView;
 
 public class Controller {
 
@@ -18,9 +19,17 @@ public class Controller {
         }
     }
 
-    public double calculate(Order order) {
+    private double calculate() {
+        InputView inputView = new InputView();
+        Order order = inputView.getCalcInput();
         Calculator calculator = makeCalculator(order);
         CalculatorMethodMap methodCalcMap = new CalculatorMethodMap(calculator);
         return methodCalcMap.getMethodCalc(order.getMethodName()).get();
+    }
+
+    public void output() {
+        double answer = calculate();
+        OutputView outputView = new OutputView();
+        outputView.output(answer);
     }
 }
