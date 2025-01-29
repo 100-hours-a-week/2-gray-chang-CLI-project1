@@ -3,7 +3,6 @@ package view;
 import calculatorEnum.CalculatorEnum;
 import calculatorEnum.MethodName;
 import orderObject.Order;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,10 +13,6 @@ import org.assertj.core.api.Assertions;
 
 class InputViewTest {
 
-    @BeforeEach
-    void setUp() {
-
-    }
 
     @Test
     @DisplayName("정상적인 값 - 일반계산기")
