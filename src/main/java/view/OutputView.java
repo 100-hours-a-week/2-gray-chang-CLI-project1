@@ -1,8 +1,6 @@
 package view;
 
 import calculatorEnum.OutputMessage;
-import controller.Controller;
-import orderObject.Order;
 
 public class OutputView {
 
