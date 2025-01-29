@@ -80,6 +80,11 @@ public class InputView {
         while (true) {
             String input = getMethodNameInput(calcType, scanner);
             MethodName methodName = methodNameMapper.getMethodName(input);
+            if (calcType.equals(CalculatorEnum.Normal_calculator) &&
+                    (methodName.equals(MethodName.sin) || methodName.equals(MethodName.cos) || methodName.equals(MethodName.tan))) {
+                System.out.println(WarningMessage.MethodTypeWarning.getMessage());
+                continue;
+            }
             if (methodName != null) {
                 return methodName;
             }
