@@ -21,7 +21,7 @@ public class InputView {
     }
 
     private Order createOrder(MethodName methodName, Scanner scanner, CalculatorEnum calcType) {
-        if (methodName.equals(MethodName.sin) || methodName.equals(MethodName.cos) || methodName.equals(MethodName.tan)){
+        if (isTriMethod(methodName)){
             System.out.print(InputMessage.SelectOneNumber.getMessage());
             int firstNum = parseInteger(scanner);
             return new Order(calcType, methodName, firstNum);
@@ -33,6 +33,7 @@ public class InputView {
             return new Order(calcType, methodName, firstNum, secondNum);
         }
     }
+
 
     private int parseInteger(Scanner scanner) {
         while(true){
@@ -81,7 +82,7 @@ public class InputView {
             String input = getMethodNameInput(calcType, scanner);
             MethodName methodName = methodNameMapper.getMethodName(input);
             if (calcType.equals(CalculatorEnum.Normal_calculator) &&
-                    (methodName.equals(MethodName.sin) || methodName.equals(MethodName.cos) || methodName.equals(MethodName.tan))) {
+                    isTriMethod(methodName)) {
                 System.out.println(WarningMessage.MethodTypeWarning.getMessage());
                 continue;
             }
@@ -90,5 +91,9 @@ public class InputView {
             }
             System.out.println(WarningMessage.MethodTypeWarning.getMessage());
         }
+    }
+
+    private boolean isTriMethod(MethodName methodName) {
+        return methodName.equals(MethodName.sin) || methodName.equals(MethodName.cos) || methodName.equals(MethodName.tan);
     }
 }
