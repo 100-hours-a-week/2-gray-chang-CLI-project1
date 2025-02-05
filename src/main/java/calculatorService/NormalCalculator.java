@@ -1,31 +1,31 @@
 package calculatorService;
 
 public class NormalCalculator implements Calculator{
-    public int a;
-    public int b;
+    public int firstInt;
+    public int secondInt;
 
-    public NormalCalculator(int a, int b) {
-        this.a = a;
-        this.b = b;
+    public NormalCalculator(int firstInt, int secondInt) {
+        this.firstInt = firstInt;
+        this.secondInt = secondInt;
     }
 
     @Override
     public double plus() {
-        return a+b;
+        return firstInt + secondInt;
     }
 
     @Override
     public double minus() {
-        return a-b;
+        return firstInt - secondInt;
     }
 
     @Override
     public double multiply() {
-        return a*b;
+        return firstInt * secondInt;
     }
 
     @Override
     public double divide() {
-        return (double) a/b;
+        return (double) firstInt / secondInt;
     }
 }
