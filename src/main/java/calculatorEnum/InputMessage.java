@@ -11,8 +11,13 @@ public enum InputMessage {
             * 곱하기
             * 나누기
             """),
-    SelectMethodScientific(SelectMethodNormal.message +
-            """
+    SelectMethodScientific("""
+            어떤 연산을 하고 싶습니까?
+            가능한 연산
+            * 더하기
+            * 빼기
+            * 곱하기
+            * 나누기
             * 사인(입력단위 : degree)
             * 코사인(입력단위 : degree)
             * 탄젠트(입력단위 : degree)
