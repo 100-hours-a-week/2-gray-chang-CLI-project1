@@ -2,27 +2,27 @@ package calculatorService;
 
 public class ScientificCalculator extends NormalCalculator{
 
-    public int c;
+    public int angleInt;
 
-    public ScientificCalculator(int a, int b) {
-        super(a, b);
+    public ScientificCalculator(int firstInt, int secondInt) {
+        super(firstInt, secondInt);
     }
 
-    public ScientificCalculator(int c) {
-        super(c, 0);
-        this.c = c;
+    public ScientificCalculator(int angleInt) {
+        super(angleInt, 0);
+        this.angleInt = angleInt;
     }
 
     public double sin(){
-        return Math.sin(Math.toRadians(c));
+        return Math.sin(Math.toRadians(angleInt));
     }
 
     public double cos(){
-        return Math.cos(Math.toRadians(c));
+        return Math.cos(Math.toRadians(angleInt));
     }
 
     public double tan(){
-        return Math.tan(Math.toRadians(c));
+        return Math.tan(Math.toRadians(angleInt));
     }
 
 }

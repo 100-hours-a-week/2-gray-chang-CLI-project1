@@ -15,7 +15,7 @@ public class InputView {
 
         CalculatorEnum calcType = getCalculator(scanner);
 
-        MethodName methodName = getMethodName(calcType, scanner);
+        MethodName methodName = matchMethodName(calcType, scanner);
 
         return createOrder(methodName, scanner, calcType);
     }
@@ -76,11 +76,10 @@ public class InputView {
         return null;
     }
 
-    private MethodName getMethodName(CalculatorEnum calcType, Scanner scanner) {
-        MethodNameMapper methodNameMapper = new MethodNameMapper();
+    private MethodName matchMethodName(CalculatorEnum calcType, Scanner scanner) {
         while (true) {
             String input = getMethodNameInput(calcType, scanner);
-            MethodName methodName = methodNameMapper.getMethodName(input);
+            MethodName methodName = MethodNameMapper.getMethodName(input);
             if (calcType.equals(CalculatorEnum.Normal_calculator) &&
                     isTriMethod(methodName)) {
                 System.out.println(WarningMessage.MethodTypeWarning.getMessage());
